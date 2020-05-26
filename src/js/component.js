@@ -105,6 +105,11 @@ $(document).ready(function () {
 
     if (!error) {
       submitBtn.unbind('submit').submit();
+      /*Редирект на определенную страницу спс*/
+      setTimeout(function () {
+       window.location.href = submitBtn.data('redirect');
+      }, 800); 
+      
     } else {
       submitBtn.parents('.assessment-page').find('.container').append('<div class="warning">Choose one of the options or enter a value!</div>');
 
