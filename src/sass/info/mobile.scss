@@ -1,0 +1,77 @@
+& {
+
+  .assessment-answer label,
+  .question-box input,
+  .assessment-answer input[type=text] {
+    min-width: calc(100% - 30px);
+    width: inherit;
+    max-width: 100%;
+  }
+
+  .assessment-page.active p {
+    font-size: 18px;
+  }
+
+  .display_flex {
+    display: block;
+  }
+
+  .assessment,
+  .assessment_succcess {
+    overflow-x: hidden;
+
+    .container {
+      padding: 0 15px;
+      max-width: 480px;
+    }
+  }
+
+  .assessment-progress {
+    padding: 35px 0 14px;
+  }
+
+
+
+  .succcess-stap {
+    display: block;
+
+    li {
+      flex-grow: 1;
+      border: 1px solid #FDAD2D;
+      margin-bottom: 10px;
+
+      &:before {
+        display: none;
+      }
+
+      &:after {
+        display: none;
+      }
+
+    }
+
+  }
+
+  .succcess-next_stap ul {
+    display: inline-block;
+    max-width: 200px;
+    text-align: left;
+
+    li {
+      margin: 0 0 20px;
+    }
+  }
+
+  .success2 .succcess-stap li:nth-child(2) {
+    width: 100%;
+  }
+
+  .success2 .succcess-next_stap ul li {
+    max-width: 100%;
+    padding-left: 9px;
+
+    br {
+      display: none;
+    }
+  }
+}
