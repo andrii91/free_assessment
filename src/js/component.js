@@ -10,7 +10,7 @@ $(document).ready(function () {
     } else if ($(this).attr('id') == 'answer1-1' || $(this).attr('id') == 'answer1-3') {
       $(this).parents('.assessment-page').find('.question-next').attr('href', '#answer1-1_next');
 
-      percentVar = '20%';
+      percentVar = '40%';
 
     } else if ($(this).attr('id') == 'answer2-1') {
       $(this).parents('.assessment-page').find('.question-next').attr('href', '#answer2-1_next');
@@ -19,7 +19,7 @@ $(document).ready(function () {
     } else if ($(this).attr('id') == 'answer2-2' || $(this).attr('id') == 'answer2-3' || $(this).attr('id') == 'answer2-4') {
       $(this).parents('.assessment-page').find('.question-next').attr('href', '#answer2-2_next');
 
-      percentVar = '40%';
+      percentVar = '60%';
 
 
     } else if ($(this).attr('id') == 'answer3-1' || $(this).attr('id') == 'answer3-2') {
@@ -27,7 +27,7 @@ $(document).ready(function () {
       $(this).parents('.assessment-page').find('.question-next').attr('href', '#answer3-1_next');
       $(this).parents('.assessment-page').find('.submit').hide();
 
-      percentVar = '60%';
+      percentVar = '75%';
 
     } else if ($(this).attr('id') == 'answer3-3') {
       $(this).parents('.assessment-page').find('.next-page').hide();
@@ -72,50 +72,65 @@ $(document).ready(function () {
 
   })
 
-  var error;
+  var error = Array();
+  var errorAll = Array();
   $('.submit').click(function (e) {
     e.preventDefault();
     var submitBtn = $(this);
 
     var required = submitBtn.parents('.assessment-page').find('.required');
 
+    for (var i = 0; i < required.length; i++) {
 
-    required.each(function () {
+      var inputVar = $(required[i]).find('input');
 
 
-      $(this).find('input').each(function () {
-        var val = $(this).val();
+      for (var j = 0; j < inputVar.length; j++) {
+        var val = $(inputVar[j]).val();
 
-        if ($(this).is(':checked') && $(this).attr('type') == 'radio' ||
-          val.length >= 1 && $(this).attr('type') == 'text' ||
-          val.length >= 1 && $(this).attr('type') == 'number') {
-          error = 0;
-          return false;
+        if (!$(inputVar[j]).is(':checked') && $(inputVar[j]).attr('type') == 'radio' ||
+          val.length <= 1 && $(inputVar[j]).attr('type') == 'text' ||
+          val.length <= 1 && $(inputVar[j]).attr('type') == 'number') {
+          error.push('error');
         } else {
-          error = 1;
-          return false;
+          error.push('noerror');
         }
-
-      })
-
-
-    })
+        
 
 
+      }
 
-    if (!error) {
-      submitBtn.unbind('submit').submit();
-      /*Редирект на определенную страницу спс*/
-      setTimeout(function () {
-       window.location.href = submitBtn.data('redirect');
-      }, 800); 
-      
-    } else {
+      if (error.indexOf('noerror') != -1) {
+        errorAll.push('noerror');
+      } else {
+        errorAll.push('error')
+      }
+        error = Array();
+    }
+    
+//    console.log('errorAll', errorAll);
+
+
+
+
+    if (errorAll.indexOf('error') != -1) {
+
       submitBtn.parents('.assessment-page').find('.container').append('<div class="warning">Choose one of the options or enter a value!</div>');
-
+      errorAll = Array();
+      error = Array();
       setTimeout(function () {
         $('.warning').remove();
       }, 1500);
+
+
+
+    } else {
+
+      submitBtn.unbind('submit').submit();
+      /*Редирект на определенную страницу спс*/
+      setTimeout(function () {
+               window.location.href = submitBtn.data('redirect');
+      }, 800);
     }
 
   });
@@ -146,31 +161,31 @@ $(document).ready(function () {
       }, 800); */
 
   });
-  
-  
-  
-  
-  	//open popup
-	$('.cd-popup-trigger').on('click', function(event){
-		event.preventDefault();
-		$('.cd-popup').addClass('is-visible');
-	});
-	
-	//close popup
-	$('.cd-popup').on('click', function(event){
-		if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
-			event.preventDefault();
-			$(this).removeClass('is-visible');
-		}
-	});
-	//close popup when clicking the esc keyboard button
-	$(document).keyup(function(event){
-    	if(event.which=='27'){
-    		$('.cd-popup').removeClass('is-visible');
-	    }
-    });
-  
-  
-  
+
+
+
+
+  //open popup
+  $('.cd-popup-trigger').on('click', function (event) {
+    event.preventDefault();
+    $('.cd-popup').addClass('is-visible');
+  });
+
+  //close popup
+  $('.cd-popup').on('click', function (event) {
+    if ($(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup')) {
+      event.preventDefault();
+      $(this).removeClass('is-visible');
+    }
+  });
+  //close popup when clicking the esc keyboard button
+  $(document).keyup(function (event) {
+    if (event.which == '27') {
+      $('.cd-popup').removeClass('is-visible');
+    }
+  });
+
+
+
 
 });
