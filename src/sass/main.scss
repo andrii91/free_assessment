@@ -69,6 +69,12 @@ xpopup
   -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
   -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
   transition: opacity 0.3s 0s, visibility 0s 0.3s;
+  z-index: 99999;
+  &.small {
+    .cd-popup-container {
+      max-width: 470px;
+    }
+  }
 }
 .cd-popup.is-visible {
   opacity: 1;

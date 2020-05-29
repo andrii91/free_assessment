@@ -624,3 +624,59 @@ color: #000000;
   color: #000000;
   margin-bottom: 35px;
 }
+
+.enquiry {
+  max-width: 470px;
+  width: 100%;
+  background: #EEEEEE;
+  padding: 40px 28px;
+  text-align: center;
+  .title {
+    font-family: Gotham Pro;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 110%;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 30px;
+  }
+  .succcess-progress .progress-title {
+    font-family: Gotham Pro;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    color: #000000;
+    .percent {
+      font-size: 20px;
+    }
+  }
+  .succcess-progress .line {
+    background: #fff;
+  }
+  p {
+    font-family: Gotham Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 149.5%;
+    color: #000000;
+  }
+  a {
+    display: block;
+  }
+  .link_close {
+    margin-top: 27px;
+    font-family: Gotham Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+    text-align: center;
+    text-decoration-line: underline;
+    color: #000000;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
