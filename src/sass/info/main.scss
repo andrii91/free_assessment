@@ -641,12 +641,16 @@ color: #000000;
     color: #000000;
     margin-bottom: 30px;
   }
-  .succcess-progress .progress-title {
+  .succcess-progress {
+    .progress-title {
     font-family: Gotham Pro;
     font-style: normal;
     font-weight: 900;
     font-size: 18px;
     color: #000000;
+    padding-right: 60px;
+    
+  }
     .percent {
       font-size: 20px;
     }
