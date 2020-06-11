@@ -90,7 +90,7 @@ xpopup
   max-width: 1440px;
   margin: 0em auto;
   background: #FFF;
-  border-radius: .25em .25em .4em .4em;
+  border-radius: 10px;
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   -webkit-transform: translateY(-40px);
@@ -106,6 +106,12 @@ xpopup
   -webkit-transition-duration: 0.3s;
   -moz-transition-duration: 0.3s;
   transition-duration: 0.3s;
+  
+}
+.small {
+  .cd-popup-container {
+    max-width: 443px;
+  }
 }
 .cd-popup-container .cd-buttons:after {
   content: "";

@@ -684,3 +684,141 @@ color: #000000;
     }
   }
 }
+
+.appeal {
+  background: #262626;
+  padding: 50px 0;
+  .container {
+    max-width: 1017px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .title {
+    font-family: Gotham Pro;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 110%;
+    letter-spacing: -0.01em;
+    color: #fff;
+    margin-right: 95px;
+    max-width: 555px;
+
+  }
+}
+
+.appeal-row {
+      display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.appeal-popup {
+  max-width: 470px;
+
+  .top {
+    background: url('../images/1man.png') no-repeat center;
+    padding: 26px 20px;
+    background-size: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    .title {
+      font-family: Gotham Pro;
+      font-style: normal;
+      font-weight: 900;
+      font-size: 34px;
+      line-height: 100%;
+      text-align: center;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+
+    }
+    p {
+      margin-bottom: 0;
+      font-family: Gotham Pro;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 120%;
+      text-align: center;
+      color: #FFFFFF;
+      max-width: 262px;
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+  }
+  .content {
+    padding: 22px 60px 41px;
+    background: #F2F2F2;
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.12);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: left;
+    .title {
+      font-family: Gotham Pro;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 17px;
+      line-height: 160%;
+      align-items: center;
+      color: #000000;
+      margin-bottom: 15px;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+//      max-width: 275px;
+      li {
+        position: relative;
+        font-family: Gotham Pro;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        line-height: 118.5%;
+        color: #000000;
+        margin-bottom: 17px;
+        padding-left: 23px;
+        &:before {
+          content: "";
+          width: 10px;
+          height: 10px;
+          background: #FDAD2D;
+          border-radius: 50%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+    form {
+      margin-top: 5px;
+      input {
+        display: block;
+        margin-bottom: 15px;
+        height: auto;
+        line-height: 1;
+        &::placeholder {
+          line-height: 1;
+        }
+      }
+      button {
+        min-height: 50px;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.appeal-btn {
+  min-height: 60px;
+      padding: 19px 40px;
+  margin-left: 0;
+}

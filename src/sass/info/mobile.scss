@@ -74,4 +74,25 @@
       display: none;
     }
   }
+  
+  .appeal-row {
+    display: block;
+    text-align: center;
+  }
+  .appeal {
+    text-align: center;
+    .title {
+      margin-right: 0;
+    }
+    br {
+      display: none;
+    }
+  }
+  .appeal-btn {
+    display: inline-block;
+        padding: 19px 35px;
+  }
+  .appeal-popup .content {
+    padding: 22px 40px 41px;
+  }
 }
